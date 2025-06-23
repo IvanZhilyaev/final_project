@@ -106,5 +106,3 @@ def move_player(event):
 root.bind("<KeyPress>", move_player)
 game_loop()
 root.mainloop()
-
-хуек немытый ты прав
