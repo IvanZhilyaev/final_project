@@ -4,9 +4,23 @@ import random
 
 root = Tk()
 root.title("Собери яйца — шаг 3")
-root.geometry("800x600")
+
+width = 800
+height = 600
+
+uesr_width = root.winfo_screenwidth()
+user_height = root.winfo_screenheight()
+
+x = (uesr_width - width) // 2
+y = (user_height - height) // 2
+
+root.geometry(f'{width}x{height}+{x}+{y}')
+# root.geometry('800x600')
+
+
 canvas = Canvas(root, width=800, height=600, bg="white")
-canvas.place(x=350, y=100)
+# canvas.place(x=350, y=100)
+canvas.pack()
 
 bg_image = Image.open("/Users/ivanzilaev/Desktop/ПРОЕКТ/img/ЕЩЕ фон.png").resize((800, 600), Image.LANCZOS)
 background = ImageTk.PhotoImage(bg_image)
@@ -94,12 +108,12 @@ def move_player(event):
     if event.keysym in ["a", "Left"]:
         if player_x > 40:
             player_x -= 20
-            canvas.move(player_image, -20, 0)
+            canvas.move(player_image, -50, 0)
             canvas.itemconfig(player_image, image=wolf_left)  # поворот влево
     elif event.keysym in ["d", "Right"]:
         if player_x < 760:
             player_x += 20
-            canvas.move(player_image, 20, 0)
+            canvas.move(player_image, 50, 0)
             canvas.itemconfig(player_image, image=wolf_right)
 
 
