@@ -8,14 +8,14 @@ root.geometry("800x600")
 canvas = Canvas(root, width=800, height=600, bg="white")
 canvas.place(x=350, y=100)
 
-bg_image = Image.open("/Users/ivanzilaev/Desktop/ПРОЕКТ/ЕЩЕ фон.png").resize((800, 600), Image.LANCZOS)
+bg_image = Image.open("/Users/ivanzilaev/Desktop/ПРОЕКТ/img/ЕЩЕ фон.png").resize((800, 600), Image.LANCZOS)
 background = ImageTk.PhotoImage(bg_image)
 canvas.background = background  # Сохраняем ссылку, чтобы не удалилось
 canvas.create_image(0, 0, image=background, anchor="nw")
 
 # Игрок-картинка
-wolf_right_img = Image.open("/Users/ivanzilaev/Desktop/ПРОЕКТ/правоверх.png").resize((250, 340), Image.LANCZOS)
-wolf_left_img = Image.open("/Users/ivanzilaev/Desktop/ПРОЕКТ/левоверх.png").resize((250, 340), Image.LANCZOS)
+wolf_right_img = Image.open("/Users/ivanzilaev/Desktop/ПРОЕКТ/img/правоверх.png").resize((250, 340), Image.LANCZOS)
+wolf_left_img = Image.open("/Users/ivanzilaev/Desktop/ПРОЕКТ/img/левоверх.png").resize((250, 340), Image.LANCZOS)
 
 wolf_right = ImageTk.PhotoImage(wolf_right_img)
 wolf_left = ImageTk.PhotoImage(wolf_left_img)
